@@ -34,7 +34,7 @@ public class TickerApplication {
 		return builder.build();
 	}
 
-	@Scheduled(fixedRate = 3000)
+	@Scheduled(fixedRate = 30000)
 	public void runEveryThirtySeconds() throws JsonProcessingException {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity("https://api.n.exchange/en/api/v1/price/BTCLTC/latest/?market_code=nex", String.class);
